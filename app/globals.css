@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
+/* LIGHT MODE (champagne / golden cream) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #efe3d3; /* darker champagne */
+  --foreground: #18181b;
+
+  --card: rgba(255, 255, 255, 0.66);
+  --cardHover: rgba(255, 255, 255, 0.82);
+
+  --border: rgba(24, 24, 27, 0.16);
+  --borderStrong: rgba(24, 24, 27, 0.26);
+
+  --muted: rgba(24, 24, 27, 0.62);
+
+  --accent: #7a5c47;
+  --accentHover: #6b4f3d;
+
+  --ring: rgba(122, 92, 71, 0.28);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* DARK MODE (space grey, not black) */
+.dark {
+  --background: #141518;
+  --foreground: #f4f4f5;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --card: rgba(255, 255, 255, 0.06);
+  --cardHover: rgba(255, 255, 255, 0.1);
+
+  --border: rgba(244, 244, 245, 0.12);
+  --borderStrong: rgba(244, 244, 245, 0.22);
+
+  --muted: rgba(244, 244, 245, 0.62);
+
+  --accent: #7a5c47;
+  --accentHover: #6b4f3d;
+
+  --ring: rgba(244, 244, 245, 0.12);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.26);
 }
