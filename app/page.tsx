@@ -37,9 +37,9 @@ const experience = [
     tone: "present",
   },
   {
-    role: "Software Developer",
+    role: "Full Stack Developer",
     company: "Semper8 Capital Ltd.",
-    year: "Jan 2025 - Aug 2025",
+    year: "Jan 2025 - Sep 2025",
     location: "Toronto, Canada",
     details:
       "Fintech – Financial data pipelines, dashboards, and real-time communication platforms.",
@@ -102,13 +102,14 @@ const interests = [
     title: "Music",
     englishLabel: "English Edition",
     englishHref:
-      "https://open.spotify.com/playlist/664oO4IdrsAzGqOhITer3U?si=3bf02a7cf5bd4195",
+      "https://open.spotify.com/playlist/5JsMHS2k4X39q9i98DTCEU?si=c9dd03fc773e4032",
     englishText:
-      "100 artists. 100 songs. One favorite from each, for you to listen to on loop.",
-    indiaLabel: "Indian Edition",
+      "101 english songs. 101 artists/bands. Stuff you should listen to before you die.",
+    indiaLabel: "India Edition",
     indiaHref:
-      "https://open.spotify.com/playlist/664oO4IdrsAzGqOhITer3U?si=3bf02a7cf5bd4195",
-    indiaText: "100 songs from India you should listen to.",
+      "https://open.spotify.com/playlist/6yIpTnTPpgQaCr0hZpDpJg?si=47ada6e5fd0241b5",
+    indiaText:
+      "25 of my favourite Bollywood love songs, ranked from bottom to top.",
   },
 
   {
@@ -161,16 +162,34 @@ function Pill({ children }: { children: React.ReactNode }) {
   );
 }
 
-/* Better theme icons (minimal + aesthetic) */
 function ThemeIcon({ dark }: { dark: boolean }) {
-  return (
-    <span className="inline-flex items-center justify-center">
-      {dark ? (
-        <span className="text-[15px] leading-none">◐</span>
-      ) : (
-        <span className="text-[15px] leading-none">◑</span>
-      )}
-    </span>
+  return dark ? (
+    // Sun (visible in dark mode)
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="5" />
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+    </svg>
+  ) : (
+    // Moon
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21.75 15.5A9 9 0 1112.5 2.25a7 7 0 109.25 13.25z" />
+    </svg>
   );
 }
 
@@ -254,10 +273,14 @@ export default function Home() {
         {/* TOP BAR */}
         <header className="flex items-center justify-between gap-3 pb-12">
           {/* Aesthetic AJM mark */}
-          <div className="flex items-center gap-2">
-            <div className="rounded-full border border-[var(--border)] bg-[var(--card)] px-3 py-1 text-xs font-semibold tracking-[0.18em] text-[var(--muted)]">
+          <div className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-4 py-1.5">
+            <span className="text-xs font-semibold tracking-[0.3em] text-[var(--foreground)]">
               AJM
-            </div>
+            </span>
+            <span
+              className="h-2 w-2 rounded-full bg-emerald-500"
+              title="Online"
+            />
           </div>
 
           <nav className="hidden sm:flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-3 py-2 text-sm font-semibold text-[var(--muted)]">
@@ -280,9 +303,18 @@ export default function Home() {
 
           <button
             onClick={toggleTheme}
-            className="h-10 w-10 rounded-2xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] hover:bg-[var(--cardHover)] hover:border-[var(--borderStrong)] transition-colors"
             aria-label="Toggle theme"
             title="Toggle theme"
+            className="
+          flex items-center justify-center
+          h-10 w-10
+          rounded-2xl
+          border border-[var(--border)]
+          bg-[var(--card)]
+          transition-colors
+          hover:bg-[var(--cardHover)]
+          hover:border-[var(--borderStrong)]
+          "
           >
             <ThemeIcon dark={dark} />
           </button>
@@ -292,20 +324,22 @@ export default function Home() {
         <section className="pb-12">
           <div className="flex flex-col gap-10 sm:flex-row sm:items-center sm:justify-between">
             <div className="min-w-0">
-              <h1 className="text-[44px] font-semibold leading-[1.06] tracking-tight sm:text-[64px]">
-                Anish John Moothedam
+              <h1 className="text-[44px] sm:text-[64px] font-semibold tracking-tight">
+                Anish <span className="opacity-80">John Moothedam</span>
               </h1>
 
               <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
-                Full-stack developer. Recent Master’s grad from the University
+                Full Stack Developer. Recent Master’s Grad from the University
                 of Windsor.
               </p>
 
               {/* pills BELOW description */}
               <div className="mt-4 flex flex-wrap items-center gap-2">
-                <Pill>Full-stack</Pill>
-                <Pill>Windsor</Pill>
-                <Pill>Open to work</Pill>
+                <Pill>Backend Systems</Pill>
+                <Pill>AI Agents</Pill>
+                <Pill>Data Pipelines</Pill>
+                <Pill>Toronto, Canada</Pill>
+                <Pill>Open To Work</Pill>
               </div>
             </div>
 
@@ -317,51 +351,75 @@ export default function Home() {
 
         <Divider />
 
-        {/* ABOUT */}
         <section id="about" className="py-14">
-          <h2 className="text-lg font-semibold tracking-tight">About</h2>
-
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <Card>
-              <p className="text-sm font-medium">What I do</p>
-              <p className="mt-2 text-sm text-[var(--muted)]">
-                I enjoy building applications from the ground up, working on
-                both backend systems and frontend interfaces.
-              </p>
-            </Card>
-
-            <Card>
-              <p className="text-sm font-medium">Outside work</p>
-              <p className="mt-2 text-sm text-[var(--muted)]">
-                Usually deep in trivia rabbit holes, following sports, or
-                playing chess. Also into geography, languages, and cultures.
-              </p>
-            </Card>
+          <div className="mb-6">
+            <h2 className="text-sm font-semibold tracking-[0.2em] text-[var(--muted)]">
+              ABOUT
+            </h2>
+            <div className="mt-2 h-px w-10 bg-[var(--accent)] opacity-60" />
           </div>
 
-          <div className="mt-3 grid gap-3 sm:grid-cols-4">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl border border-[var(--border)] bg-[var(--card)] px-4 py-3 text-sm hover:bg-[var(--cardHover)] hover:border-[var(--borderStrong)] transition-colors"
-              >
-                <p className="text-xs text-[var(--muted)]">{l.label}</p>
-                <p className="mt-1 font-medium">{l.value}</p>
-              </a>
-            ))}
+          <div className="mx-auto max-w-4xl">
+            <div
+              className="
+        rounded-[28px]
+        border border-[var(--border)]
+        bg-[var(--card)]
+        px-6 py-5
+        shadow-[0_6px_18px_rgba(0,0,0,0.04)]
+      "
+            >
+              <p className="text-[14.5px] leading-relaxed text-[var(--muted)]">
+                Hey, I’m Anish. I’m a full-stack developer and a recent Master’s
+                grad from the University of Windsor, currently based in Toronto,
+                Canada. I like building things end to end, especially backend
+                systems, data pipelines, and AI-driven products.
+              </p>
+
+              <p className="mt-3 text-[14.5px] leading-relaxed text-[var(--muted)]">
+                I’ve worked on enterprise tools, fintech platforms, and
+                agent-based AI systems. Outside of work, I’m usually deep into
+                sports trivia, playing chess, or going down random rabbit holes
+                to geek out. Always happy to connect!
+              </p>
+
+              <div className="mt-6 flex justify-center">
+                <a
+                  href="/AJM_CV.pdf"
+                  target="_blank"
+                  className="
+  inline-flex items-center justify-center
+  rounded-full px-6 py-2.5
+  text-sm font-medium
+  transition-all
+  hover:-translate-y-[1px]
+  bg-[var(--cta)] text-[var(--foreground)]
+  hover:bg-[var(--ctaHover)]
+
+  shadow-[0_2px_6px_rgba(111,90,74,0.18)]
+  hover:shadow-[0_4px_10px_rgba(111,90,74,0.22)]
+
+  dark:shadow-none
+  dark:bg-[var(--cta)]
+  dark:text-[#18181b]
+  dark:hover:bg-[var(--ctaHover)]
+"
+                >
+                  Download CV
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
-        <Divider />
-
         {/* WORK EXPERIENCE (Present → Past) */}
         <section id="experience" className="py-14">
-          <h2 className="text-lg font-semibold tracking-tight">
-            Work Experience
-          </h2>
+          <div className="mb-6">
+            <h2 className="text-sm font-semibold tracking-[0.2em] text-[var(--muted)]">
+              WORK EXPERIENCE
+            </h2>
+            <div className="mt-2 h-px w-10 bg-[var(--accent)] opacity-60" />
+          </div>
 
           <div className="mt-8 relative">
             {/* rail */}
@@ -428,7 +486,12 @@ export default function Home() {
 
         {/* EDUCATION (Years only, clean list) */}
         <section id="education" className="py-14">
-          <h2 className="text-lg font-semibold tracking-tight">Education</h2>
+          <div className="mb-6">
+            <h2 className="text-sm font-semibold tracking-[0.2em] text-[var(--muted)]">
+              EDUCATION
+            </h2>
+            <div className="mt-2 h-px w-10 bg-[var(--accent)] opacity-60" />
+          </div>
 
           <div className="mt-8 mx-auto max-w-3xl space-y-4">
             {education.map((ed, idx) => (
@@ -470,7 +533,12 @@ export default function Home() {
 
         {/* INTERESTS (Minimal list rows, inline links) */}
         <section id="interests" className="py-14">
-          <h2 className="text-lg font-semibold tracking-tight">Interests</h2>
+          <div className="mb-6">
+            <h2 className="text-sm font-semibold tracking-[0.2em] text-[var(--muted)]">
+              INTERESTS
+            </h2>
+            <div className="mt-2 h-px w-10 bg-[var(--accent)] opacity-60" />
+          </div>
 
           <div className="mt-6 overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--card)]">
             {interests.map((i, idx) => (
@@ -552,63 +620,84 @@ export default function Home() {
 
         <Divider />
 
-        {/* LANGUAGES (Centered + refined chips) */}
-        <section className="py-14 text-center">
-          <h2 className="text-lg font-semibold tracking-tight">Languages</h2>
+        <section className="py-14">
+          {/* Heading stays left */}
+          <div className="mb-6">
+            <h2 className="text-sm font-semibold tracking-[0.2em] text-[var(--muted)]">
+              LANGUAGES
+            </h2>
+            <div className="mt-2 h-px w-10 bg-[var(--accent)] opacity-60" />
+          </div>
 
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            {languages.map((l) => (
-              <span
-                key={l.name}
-                className="group inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-4 py-2 text-sm transition-all hover:bg-[var(--cardHover)] hover:border-[var(--borderStrong)] hover:-translate-y-[1px]"
-              >
-                <span className="font-semibold text-[var(--foreground)]">
-                  {l.name}
+          {/* Content centered */}
+          <div className="mx-auto max-w-4xl">
+            <div className="flex flex-wrap justify-center gap-2">
+              {languages.map((l) => (
+                <span
+                  key={l.name}
+                  className="group inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--card)] px-4 py-2 text-sm transition-all hover:bg-[var(--cardHover)] hover:border-[var(--borderStrong)] hover:-translate-y-[1px]"
+                >
+                  <span className="font-semibold text-[var(--foreground)]">
+                    {l.name}
+                  </span>
+                  <span className="text-[12px] text-[var(--muted)]">
+                    {l.level}
+                  </span>
                 </span>
-
-                <span className="text-[12px] text-[var(--muted)] opacity-80 group-hover:opacity-100 transition-opacity">
-                  {l.level}
-                </span>
-              </span>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
         <Divider />
 
         {/* CONTACT */}
-        <section id="contact" className="py-20 text-center">
-          <h2 className="text-lg font-semibold tracking-tight">Contact</h2>
+        <section id="contact" className="py-20">
+          {/* Heading stays left */}
+          <div className="mb-6">
+            <h2 className="text-sm font-semibold tracking-[0.2em] text-[var(--muted)]">
+              CONTACT
+            </h2>
+            <div className="mt-2 h-px w-10 bg-[var(--accent)] opacity-60" />
+          </div>
 
-          <div className="mt-6 mx-auto max-w-md">
-            <p className="text-[15px] leading-relaxed text-[var(--foreground)]">
-              I’m always open to connecting, so feel free to reach out.
-            </p>
+          {/* Content centered */}
+          <div className="mx-auto max-w-md">
+            <Card className="mt-6 text-center">
+              <p className="text-[15px] leading-relaxed text-[var(--foreground)]">
+                I’m always open to connecting, so feel free to reach out.
+              </p>
 
-            <p className="mt-2 text-[15px] leading-relaxed text-[var(--muted)]">
-              Or just drop a hi now that you know me so well{" "}
-              <span className="text-[var(--foreground)]">😉</span>
-            </p>
+              <p className="mt-2 text-[15px] leading-relaxed text-[var(--muted)]">
+                Or just drop a hi now that you know me so well{" "}
+                <span className="text-[var(--foreground)]">😉</span>
+              </p>
 
-            {/* CTA */}
-            <div className="mt-8">
-              <a
-                href="mailto:anish@example.com"
-                className="
-          inline-flex items-center justify-center
-          rounded-full
-          bg-[var(--accent)]
-          px-7 py-2.5
-          text-sm font-medium text-white
-          transition-all
-          hover:bg-[var(--accentHover)]
-          hover:-translate-y-[1px]
-          shadow-[0_8px_20px_rgba(122,92,71,0.3)]
-        "
-              >
-                Contact me
-              </a>
-            </div>
+              <div className="mt-8">
+                <a
+                  href="mailto:anishjm.1998@gmail.com"
+                  className="
+  inline-flex items-center justify-center
+  rounded-full px-6 py-2.5
+  text-sm font-medium
+  transition-all
+  hover:-translate-y-[1px]
+  bg-[var(--cta)] text-[var(--foreground)]
+  hover:bg-[var(--ctaHover)]
+
+  shadow-[0_2px_6px_rgba(111,90,74,0.18)]
+  hover:shadow-[0_4px_10px_rgba(111,90,74,0.22)]
+
+  dark:shadow-none
+  dark:bg-[var(--cta)]
+  dark:text-[#18181b]
+  dark:hover:bg-[var(--ctaHover)]
+"
+                >
+                  Contact Me
+                </a>
+              </div>
+            </Card>
           </div>
         </section>
 

@@ -2,7 +2,7 @@
 
 /* LIGHT MODE (champagne / golden cream) */
 :root {
-  --background: #efe3d3; /* darker champagne */
+  --background: #efe3d3;
   --foreground: #18181b;
 
   --card: rgba(255, 255, 255, 0.66);
@@ -13,13 +13,16 @@
 
   --muted: rgba(24, 24, 27, 0.62);
 
-  --accent: #7a5c47;
-  --accentHover: #6b4f3d;
+  /* muted coffee */
+  --accent: #6f5a4a;
+  --accentHover: #5f4c3f;
 
-  --ring: rgba(122, 92, 71, 0.28);
+  --ring: rgba(111, 90, 74, 0.28);
+
+  --cta: #dcc7ad;
+  --ctaHover: #cfb899;
 }
 
-/* DARK MODE (space grey, not black) */
 .dark {
   --background: #141518;
   --foreground: #f4f4f5;
@@ -32,10 +35,13 @@
 
   --muted: rgba(244, 244, 245, 0.62);
 
-  --accent: #7a5c47;
-  --accentHover: #6b4f3d;
+  --accent: #8b7a6b;
+  --accentHover: #7a6a5d;
 
   --ring: rgba(244, 244, 245, 0.12);
+
+  --cta: #e5e5e5;
+  --ctaHover: #d4d4d4;
 }
 
 body {
