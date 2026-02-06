@@ -14,9 +14,9 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Anish John Moothedam | Full-stack Developer",
-  description:
-    "Full-stack Developer pursuing Master's in Applied Computing at University of Windsor",
+  title: "Anish John Moothedam",
+  description: "Full-stack Developer",
+  metadataBase: new URL("https://anishjm1998.github.io/ajmishere"),
 };
 
 export default function RootLayout({
