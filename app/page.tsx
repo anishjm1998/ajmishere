@@ -219,7 +219,7 @@ function FlipAvatar() {
           style={{ backfaceVisibility: "hidden" }}
         >
           <Image
-            src="/ajm-personal-portfolio/images/ajm1.jpeg"
+            src="/images/ajm1.jpeg"
             alt="Anish profile photo"
             fill
             className="object-cover"
@@ -235,7 +235,7 @@ function FlipAvatar() {
           }}
         >
           <Image
-            src="/ajm-personal-portfolio/images/ajm2.jpeg"
+            src="/images/ajm2.jpeg"
             alt="Anish alternate profile photo"
             fill
             className="object-cover"
@@ -385,7 +385,7 @@ export default function Home() {
 
               <div className="mt-6 flex justify-center">
                 <a
-                  href="/ajm-personal-portfolio/AJM_CV.pdf"
+                  href="/AJM_CV.pdf"
                   target="_blank"
                   className="
   inline-flex items-center justify-center
