@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
+const basePath = process.env.NODE_ENV === "production" ? "/ajmishere" : "";
+
 const links = [
   {
     label: "Blog",
@@ -219,7 +221,7 @@ function FlipAvatar() {
           style={{ backfaceVisibility: "hidden" }}
         >
           <Image
-            src="/images/ajm1.jpeg"
+            src={`${basePath}/images/ajm1.jpeg`}
             alt="Anish profile photo"
             fill
             className="object-cover"
@@ -235,7 +237,7 @@ function FlipAvatar() {
           }}
         >
           <Image
-            src="/images/ajm2.jpeg"
+            src={`${basePath}/images/ajm2.jpeg`}
             alt="Anish alternate profile photo"
             fill
             className="object-cover"
@@ -385,7 +387,7 @@ export default function Home() {
 
               <div className="mt-6 flex justify-center">
                 <a
-                  href="/AJM_CV.pdf"
+                  href={`${basePath}/AJM_CV.pdf`}
                   target="_blank"
                   className="
   inline-flex items-center justify-center
