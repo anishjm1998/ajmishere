@@ -22,7 +22,7 @@ const links = [
   {
     label: "GitHub",
     value: "anishjm1998",
-    href: "https://github.com/anishjm1998/new-portfolio",
+    href: "https://github.com/anishjm1998/ajmishere",
   },
 ];
 
