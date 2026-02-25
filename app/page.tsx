@@ -116,7 +116,7 @@ const interests = [
 
   {
     title: "Foodie",
-    line: "Certified biryani connoisseur. Other weaknesses include fried chicken, crispy masala dosa, and strong-flavoured coffee.",
+    line: "Certified biryani connoisseur. Other weaknesses include fried chicken, crispy masala dosa, and flavoured iced coffee.",
   },
 ];
 
