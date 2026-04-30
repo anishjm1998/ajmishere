@@ -31,20 +31,20 @@ const links = [
 const experience = [
   {
     role: "Software Engineer",
-    company: "Plato Technologies Inc.",
+    company: "Plato Agentic Systems",
     year: "Oct 2025 - Present",
     location: "San Francisco, USA",
     details:
-      "AI Systems – Agent automation, reinforcement learning, and synthetic environments.",
+      "AI Systems – Simulation environments, multi-agent orchestration, and synthetic data pipelines.",
     tone: "present",
   },
   {
     role: "Full Stack Developer",
     company: "Semper8 Capital Ltd.",
-    year: "Jan 2025 - Sep 2025",
+    year: "Jan 2025 - Aug 2025",
     location: "Toronto, Canada",
     details:
-      "Fintech – Financial data pipelines, dashboards, and real-time communication platforms.",
+      "Fintech – Financial data pipelines, real-time WebRTC communication, and analytics dashboards.",
     tone: "recent",
   },
   {
@@ -53,7 +53,7 @@ const experience = [
     year: "2021 – 2023",
     location: "Kolkata, India",
     details:
-      "Enterprise Software – Backend automation, internal tools, and large-scale systems.",
+      "Enterprise Software – Backend automation, identity provisioning, and ERP system tooling.",
     tone: "past",
   },
 ];
@@ -87,7 +87,7 @@ const interests = [
 
   {
     title: "Gaming",
-    line: "Self-proclaimed FIFA god. Challenge me on ",
+    line: "Self-proclaimed FIFA god. I also play a lot of chess — challenge me on ",
     linkText: "Chess.com (AJM_1998)",
     href: "https://www.chess.com/member/ajm_1998",
     after: " if you think you can beat me.",
@@ -331,7 +331,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[var(--muted)]">
-                Full Stack Developer. Recent Master’s Grad from the University
+                AI Engineer & Full Stack Developer. Master’s Grad from the University
                 of Windsor.
               </p>
 
@@ -372,10 +372,8 @@ export default function Home() {
       "
             >
               <p className="text-[14.5px] leading-relaxed text-[var(--muted)]">
-                Hey, I’m Anish. I’m a full-stack developer and a recent Master’s
-                grad from the University of Windsor, currently based in Toronto,
-                Canada. I like building things end to end, especially backend
-                systems, data pipelines, and AI-driven products.
+                Hey, I’m Anish. I’m an AI Engineer and Full Stack Developer based in Toronto, Canada, with a Master’s from the University of Windsor. 
+                I like building systems end to end, especially agentic AI workflows, backend services, and data pipelines.
               </p>
 
               <p className="mt-3 text-[14.5px] leading-relaxed text-[var(--muted)]">
